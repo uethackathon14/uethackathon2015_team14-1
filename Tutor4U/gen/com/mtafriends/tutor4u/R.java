@@ -20,7 +20,7 @@ public final class R {
     public static final class attr {
         /** 
     The size of the ad. It must be one of BANNER, FULL_BANNER, LEADERBOARD,
-    MEDIUM_RECTANGLE, SMART_BANNER, WIDE_SKYSCRAPER, or
+    MEDIUM_RECTANGLE, SMART_BANNER, WIDE_SKYSCRAPER, FLUID or
     &lt;width&gt;x&lt;height&gt;.
     
          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -34,7 +34,7 @@ containing a value of this type.
         /** 
     A comma-separated list of the supported ad sizes. The sizes must be one of
     BANNER, FULL_BANNER, LEADERBOARD, MEDIUM_RECTANGLE, SMART_BANNER,
-    WIDE_SKYSCRAPER, or &lt;width&gt;x&lt;height&gt;.
+    WIDE_SKYSCRAPER, FLUID or &lt;width&gt;x&lt;height&gt;.
     
          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
@@ -53,6 +53,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int adUnitId=0x7f010002;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int ambientEnabled=0x7f010016;
         /**  Theme to be used for the Wallet selector 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -64,7 +72,7 @@ containing a value of this type.
 <tr><td><code>holo_light</code></td><td>1</td><td></td></tr>
 </table>
          */
-        public static final int appTheme=0x7f010016;
+        public static final int appTheme=0x7f010017;
         /**  The appearance of the buy button 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -72,12 +80,19 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>google_wallet_classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>google_wallet_grayscale</code></td><td>2</td><td></td></tr>
+<tr><td><code>google_wallet_monochrome</code></td><td>3</td><td></td></tr>
+<tr><td><code>classic</code></td><td>1</td><td> TODO(waltercacau): Uncomment when Android Pay is launched to all developers:
+                <enum name="android_pay_dark" value="4"/>
+                <enum name="android_pay_light" value="5"/>
+                <enum name="android_pay_light_with_border" value="6"/> 
+ Deprecated values </td></tr>
 <tr><td><code>grayscale</code></td><td>2</td><td></td></tr>
 <tr><td><code>monochrome</code></td><td>3</td><td></td></tr>
 </table>
          */
-        public static final int buyButtonAppearance=0x7f01001d;
+        public static final int buyButtonAppearance=0x7f01001e;
         /**  Height of the buy button. This includes an 8dp padding (4dp on each side) used for
              pressed and focused states of the button. The value can be a specific height, e.g.
              "48dp", or special values "match_parent" and "wrap_content". 
@@ -99,7 +114,7 @@ containing a value of this type.
 <tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
 </table>
          */
-        public static final int buyButtonHeight=0x7f01001a;
+        public static final int buyButtonHeight=0x7f01001b;
         /**  The text on the buy button 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -107,13 +122,16 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>buy_with_google</code></td><td>1</td><td></td></tr>
+<tr><td><code>buy_with</code></td><td>5</td><td></td></tr>
+<tr><td><code>logo_only</code></td><td>6</td><td></td></tr>
+<tr><td><code>donate_with</code></td><td>7</td><td></td></tr>
+<tr><td><code>buy_with_google</code></td><td>1</td><td> Deprecated values </td></tr>
 <tr><td><code>buy_now</code></td><td>2</td><td></td></tr>
 <tr><td><code>book_now</code></td><td>3</td><td></td></tr>
 <tr><td><code>donate_with_google</code></td><td>4</td><td></td></tr>
 </table>
          */
-        public static final int buyButtonText=0x7f01001c;
+        public static final int buyButtonText=0x7f01001d;
         /**  Width of the buy button. This includes an 8dp padding (4dp on each side) used for
              pressed and focused states of the button. The value can be a specific width, e.g.
              "300dp", or special values "match_parent" and "wrap_content". 
@@ -135,7 +153,7 @@ containing a value of this type.
 <tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
 </table>
          */
-        public static final int buyButtonWidth=0x7f01001b;
+        public static final int buyButtonWidth=0x7f01001c;
         /** <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -200,7 +218,7 @@ containing a value of this type.
 <tr><td><code>strict_sandbox</code></td><td>2</td><td></td></tr>
 </table>
          */
-        public static final int environment=0x7f010017;
+        public static final int environment=0x7f010018;
         /**  Fragment mode 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -212,12 +230,12 @@ containing a value of this type.
 <tr><td><code>selectionDetails</code></td><td>2</td><td></td></tr>
 </table>
          */
-        public static final int fragmentMode=0x7f010019;
+        public static final int fragmentMode=0x7f01001a;
         /**  A style resource specifing attributes to customize the look and feel of WalletFragment 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int fragmentStyle=0x7f010018;
+        public static final int fragmentStyle=0x7f010019;
         /** 
         The fixed aspect ratio to use in aspect ratio adjustments.
         
@@ -273,24 +291,24 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
-        public static final int maskedWalletDetailsBackground=0x7f010020;
+        public static final int maskedWalletDetailsBackground=0x7f010021;
         /**  "Change" button background in masked wallet details view 
          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
-        public static final int maskedWalletDetailsButtonBackground=0x7f010022;
+        public static final int maskedWalletDetailsButtonBackground=0x7f010023;
         /**  TextAppearance for the "Change" button in masked wallet details view 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int maskedWalletDetailsButtonTextAppearance=0x7f010021;
+        public static final int maskedWalletDetailsButtonTextAppearance=0x7f010022;
         /**  TextAppearance for headers describing masked wallet details 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int maskedWalletDetailsHeaderTextAppearance=0x7f01001f;
+        public static final int maskedWalletDetailsHeaderTextAppearance=0x7f010020;
         /**  Type of the wallet logo image in masked wallet details view 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -298,11 +316,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>google_wallet_classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>google_wallet_monochrome</code></td><td>2</td><td></td></tr>
+<tr><td><code>classic</code></td><td>1</td><td> TODO(waltercacau): Uncomment when Android Pay is launched to all developers:
+                <enum name="android_pay" value="3"/> 
+ Deprecated values </td></tr>
 <tr><td><code>monochrome</code></td><td>2</td><td></td></tr>
 </table>
          */
-        public static final int maskedWalletDetailsLogoImageType=0x7f010024;
+        public static final int maskedWalletDetailsLogoImageType=0x7f010025;
         /**  Color of the Google Wallet logo text in masked wallet details view 
          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
@@ -312,12 +334,12 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int maskedWalletDetailsLogoTextColor=0x7f010023;
+        public static final int maskedWalletDetailsLogoTextColor=0x7f010024;
         /**  TextAppearance for masked wallet details 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int maskedWalletDetailsTextAppearance=0x7f01001e;
+        public static final int maskedWalletDetailsTextAppearance=0x7f01001f;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -393,7 +415,7 @@ containing a value of this type.
 <tr><td><code>none</code></td><td>2</td><td></td></tr>
 </table>
          */
-        public static final int windowTransitionStyle=0x7f010025;
+        public static final int windowTransitionStyle=0x7f010026;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -493,62 +515,69 @@ containing a value of this type.
         public static final int ic_action_search=0x7f020020;
         public static final int ic_communities=0x7f020021;
         public static final int ic_drawer=0x7f020022;
-        public static final int ic_home=0x7f020023;
-        public static final int ic_launcher=0x7f020024;
-        public static final int ic_pages=0x7f020025;
-        public static final int ic_people=0x7f020026;
-        public static final int ic_photos=0x7f020027;
-        public static final int ic_plusone_medium_off_client=0x7f020028;
-        public static final int ic_plusone_small_off_client=0x7f020029;
-        public static final int ic_plusone_standard_off_client=0x7f02002a;
-        public static final int ic_plusone_tall_off_client=0x7f02002b;
-        public static final int ic_whats_hot=0x7f02002c;
-        public static final int list_item_bg_normal=0x7f02002d;
-        public static final int list_item_bg_pressed=0x7f02002e;
-        public static final int list_selector=0x7f02002f;
-        public static final int powered_by_google_dark=0x7f020030;
-        public static final int powered_by_google_light=0x7f020031;
+        public static final int ic_flag_location=0x7f020023;
+        public static final int ic_home=0x7f020024;
+        public static final int ic_launcher=0x7f020025;
+        public static final int ic_pages=0x7f020026;
+        public static final int ic_people=0x7f020027;
+        public static final int ic_photos=0x7f020028;
+        public static final int ic_plusone_medium_off_client=0x7f020029;
+        public static final int ic_plusone_small_off_client=0x7f02002a;
+        public static final int ic_plusone_standard_off_client=0x7f02002b;
+        public static final int ic_plusone_tall_off_client=0x7f02002c;
+        public static final int ic_whats_hot=0x7f02002d;
+        public static final int list_item_bg_normal=0x7f02002e;
+        public static final int list_item_bg_pressed=0x7f02002f;
+        public static final int list_selector=0x7f020030;
+        public static final int powered_by_google_dark=0x7f020031;
+        public static final int powered_by_google_light=0x7f020032;
     }
     public static final class id {
-        public static final int action_settings=0x7f070027;
-        public static final int adjust_height=0x7f070003;
+        public static final int action_settings=0x7f07002d;
+        public static final int adjust_height=0x7f070001;
         public static final int adjust_width=0x7f070002;
-        public static final int avaTutor=0x7f070020;
-        public static final int book_now=0x7f070014;
+        public static final int avaTutor=0x7f070026;
+        public static final int book_now=0x7f070012;
         public static final int buyButton=0x7f07000e;
         public static final int buy_now=0x7f070013;
-        public static final int buy_with_google=0x7f070012;
+        public static final int buy_with=0x7f070014;
+        public static final int buy_with_google=0x7f070015;
         public static final int cast_notification_id=0x7f070000;
-        public static final int classic=0x7f070016;
-        public static final int counter=0x7f07001f;
-        public static final int donate_with_google=0x7f070015;
-        public static final int drawer_layout=0x7f07001a;
-        public static final int frame_container=0x7f07001b;
-        public static final int grayscale=0x7f070017;
+        public static final int classic=0x7f070019;
+        public static final int counter=0x7f070025;
+        public static final int donate_with=0x7f070016;
+        public static final int donate_with_google=0x7f070017;
+        public static final int drawer_layout=0x7f070020;
+        public static final int frame_container=0x7f070021;
+        public static final int google_wallet_classic=0x7f07001a;
+        public static final int google_wallet_grayscale=0x7f07001b;
+        public static final int google_wallet_monochrome=0x7f07001c;
+        public static final int grayscale=0x7f07001d;
         public static final int holo_dark=0x7f070008;
         public static final int holo_light=0x7f070009;
-        public static final int hybrid=0x7f070007;
-        public static final int icon=0x7f07001d;
-        public static final int list_slidermenu=0x7f07001c;
-        public static final int lvTutor=0x7f070026;
-        public static final int map=0x7f070025;
+        public static final int hybrid=0x7f070004;
+        public static final int icon=0x7f070023;
+        public static final int list_slidermenu=0x7f070022;
+        public static final int logo_only=0x7f070018;
+        public static final int lvTutor=0x7f07002c;
+        public static final int map=0x7f07002b;
         public static final int match_parent=0x7f070010;
-        public static final int monochrome=0x7f070018;
-        public static final int none=0x7f070001;
-        public static final int normal=0x7f070004;
+        public static final int monochrome=0x7f07001e;
+        public static final int none=0x7f070003;
+        public static final int normal=0x7f070005;
         public static final int production=0x7f07000a;
-        public static final int sandbox=0x7f07000c;
-        public static final int satellite=0x7f070005;
+        public static final int sandbox=0x7f07000b;
+        public static final int satellite=0x7f070006;
         public static final int selectionDetails=0x7f07000f;
-        public static final int slide=0x7f070019;
-        public static final int strict_sandbox=0x7f07000d;
-        public static final int terrain=0x7f070006;
-        public static final int test=0x7f07000b;
-        public static final int title=0x7f07001e;
-        public static final int txtLabel=0x7f070024;
-        public static final int txtLevel=0x7f070023;
-        public static final int txtNameTutor=0x7f070021;
-        public static final int txtSubject=0x7f070022;
+        public static final int slide=0x7f07001f;
+        public static final int strict_sandbox=0x7f07000c;
+        public static final int terrain=0x7f070007;
+        public static final int test=0x7f07000d;
+        public static final int title=0x7f070024;
+        public static final int txtLabel=0x7f07002a;
+        public static final int txtLevel=0x7f070029;
+        public static final int txtNameTutor=0x7f070027;
+        public static final int txtSubject=0x7f070028;
         public static final int wrap_content=0x7f070011;
     }
     public static final class integer {
@@ -584,24 +613,24 @@ containing a value of this type.
         public static final int auth_google_play_services_client_google_display_name=0x7f060006;
         /**  Message of the notification to indicate an active cast display connection.  [CHAR LIMIT=80] NOTE: Same text as msgid="794424023757290105" 
          */
-        public static final int cast_notification_connected_message=0x7f060009;
+        public static final int cast_notification_connected_message=0x7f06000b;
         /**  Message of the notification to indicate the process of connecting to a cast display.  [CHAR LIMIT=80] NOTE: Same text as msgid="5435169294190995247" 
          */
-        public static final int cast_notification_connecting_message=0x7f060008;
+        public static final int cast_notification_connecting_message=0x7f06000a;
         /**  Label of a button to disconnect an active cast display connection.  [CHAR LIMIT=25] NOTE: Same text as msgid="9024230238785261495" 
          */
-        public static final int cast_notification_disconnect=0x7f06000a;
+        public static final int cast_notification_disconnect=0x7f06000c;
         /**   Text for notification shown when the Android Wear apps needs to be updated. Only shown on the wearable. [CHAR LIMIT=NONE] 
          */
-        public static final int common_android_wear_notification_needs_update_text=0x7f06000d;
+        public static final int common_android_wear_notification_needs_update_text=0x7f06000f;
         /**  Message in confirmation dialog informing user that they need to update
         the Android Wear app [CHAR LIMIT=NONE] 
          */
-        public static final int common_android_wear_update_text=0x7f06001a;
+        public static final int common_android_wear_update_text=0x7f06001c;
         /**  Title of confirmation dialog informing user that they need to update
         the Android Wear app (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_android_wear_update_title=0x7f060018;
+        public static final int common_android_wear_update_title=0x7f06001a;
         /**  Message in confirmation dialog informing the user that one of the APIs they attepmt to access is not available. [CHAR LIMIT=NONE] 
          */
         public static final int common_google_play_services_api_unavailable_text=0x7f060028;
@@ -609,56 +638,56 @@ containing a value of this type.
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_enable_button=0x7f060016;
+        public static final int common_google_play_services_enable_button=0x7f060018;
         /**  Message in confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_enable_text=0x7f060015;
+        public static final int common_google_play_services_enable_text=0x7f060017;
         /**  Title of confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_enable_title=0x7f060014;
+        public static final int common_google_play_services_enable_title=0x7f060016;
         /**   Requested by string saying which app requested the notification. [CHAR LIMIT=42] 
          */
-        public static final int common_google_play_services_error_notification_requested_by_msg=0x7f06000f;
+        public static final int common_google_play_services_error_notification_requested_by_msg=0x7f060011;
         /**  Button in confirmation dialog for installing Google Play services [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_install_button=0x7f060013;
+        public static final int common_google_play_services_install_button=0x7f060015;
         /**  (For phones) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_phone=0x7f060011;
+        public static final int common_google_play_services_install_text_phone=0x7f060013;
         /**  (For tablets) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_tablet=0x7f060012;
+        public static final int common_google_play_services_install_text_tablet=0x7f060014;
         /**  Title of confirmation dialog informing user that they need to install
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_install_title=0x7f060010;
+        public static final int common_google_play_services_install_title=0x7f060012;
         /**  Message in confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_invalid_account_text=0x7f060020;
+        public static final int common_google_play_services_invalid_account_text=0x7f060022;
         /**  Title of confirmation dialog informing the user that they provided an invalid account. [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_invalid_account_title=0x7f06001f;
+        public static final int common_google_play_services_invalid_account_title=0x7f060021;
         /**   Title for notification shown when GooglePlayServices needs to be enabled for an
         application to work. [CHAR LIMIT=70] 
          */
-        public static final int common_google_play_services_needs_enabling_title=0x7f06000e;
+        public static final int common_google_play_services_needs_enabling_title=0x7f060010;
         /**  Message in confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_network_error_text=0x7f06001e;
+        public static final int common_google_play_services_network_error_text=0x7f060020;
         /**  Title of confirmation dialog informing the user that a network error occurred. [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_network_error_title=0x7f06001d;
+        public static final int common_google_play_services_network_error_title=0x7f06001f;
         /**   Title for notification shown when GooglePlayServices needs to be updated for an
         application to work. [CHAR LIMIT=70] 
          */
-        public static final int common_google_play_services_notification_needs_update_title=0x7f06000c;
+        public static final int common_google_play_services_notification_needs_update_title=0x7f06000e;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=42] 
          */
-        public static final int common_google_play_services_notification_ticker=0x7f06000b;
+        public static final int common_google_play_services_notification_ticker=0x7f06000d;
         /**  Message in confirmation dialog informing the user that the account could not be signed in. [CHAR LIMIT=NONE] 
          */
         public static final int common_google_play_services_sign_in_failed_text=0x7f06002a;
@@ -668,41 +697,41 @@ containing a value of this type.
         /**  Message in confirmation dialog informing user there is an unknown issue in Google Play
         services [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unknown_issue=0x7f060021;
+        public static final int common_google_play_services_unknown_issue=0x7f060023;
         /**  Message in confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unsupported_text=0x7f060023;
+        public static final int common_google_play_services_unsupported_text=0x7f060025;
         /**  Title of confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_unsupported_title=0x7f060022;
+        public static final int common_google_play_services_unsupported_title=0x7f060024;
         /**  Button in confirmation dialog for updating Google Play services [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_update_button=0x7f060024;
+        public static final int common_google_play_services_update_button=0x7f060026;
         /**  Message in confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_update_text=0x7f060019;
+        public static final int common_google_play_services_update_text=0x7f06001b;
         /**  Title of confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_update_title=0x7f060017;
+        public static final int common_google_play_services_update_title=0x7f060019;
         /**  Message in confirmation dialog informing user that Google Play services is currently
         updating [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_updating_text=0x7f06001c;
+        public static final int common_google_play_services_updating_text=0x7f06001e;
         /**  Title of confirmation dialog informing user that Google Play services is currently
         updating [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_updating_title=0x7f06001b;
+        public static final int common_google_play_services_updating_title=0x7f06001d;
         /**  Label for an action to open a notifications content on the phone [CHAR LIMIT=25] 
          */
         public static final int common_open_on_phone=0x7f060027;
         /**  Sign-in button text [CHAR LIMIT=15] 
          */
-        public static final int common_signin_button_text=0x7f060025;
+        public static final int common_signin_button_text=0x7f060008;
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
-        public static final int common_signin_button_text_long=0x7f060026;
+        public static final int common_signin_button_text_long=0x7f060009;
         public static final int create_calendar_message=0x7f060005;
         public static final int create_calendar_title=0x7f060004;
         public static final int decline=0x7f060003;
@@ -719,6 +748,8 @@ containing a value of this type.
         public static final int store_picture_title=0x7f060000;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
+ Text on a button that allows a user to make a payment with Google Wallet
+         [CHAR LIMIT=30] 
          */
         public static final int wallet_buy_button_place_holder=0x7f06002b;
     }
@@ -785,7 +816,7 @@ containing a value of this type.
           @attr description
           
     The size of the ad. It must be one of BANNER, FULL_BANNER, LEADERBOARD,
-    MEDIUM_RECTANGLE, SMART_BANNER, WIDE_SKYSCRAPER, or
+    MEDIUM_RECTANGLE, SMART_BANNER, WIDE_SKYSCRAPER, FLUID or
     &lt;width&gt;x&lt;height&gt;.
     
 
@@ -806,7 +837,7 @@ containing a value of this type.
           
     A comma-separated list of the supported ad sizes. The sizes must be one of
     BANNER, FULL_BANNER, LEADERBOARD, MEDIUM_RECTANGLE, SMART_BANNER,
-    WIDE_SKYSCRAPER, or &lt;width&gt;x&lt;height&gt;.
+    WIDE_SKYSCRAPER, FLUID or &lt;width&gt;x&lt;height&gt;.
     
 
 
@@ -847,7 +878,7 @@ containing a value of this type.
            @see #CustomWalletTheme_windowTransitionStyle
          */
         public static final int[] CustomWalletTheme = {
-            0x7f010025
+            0x7f010026
         };
         /**
           <p>
@@ -954,6 +985,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #MapAttrs_ambientEnabled com.mtafriends.tutor4u:ambientEnabled}</code></td><td></td></tr>
            <tr><td><code>{@link #MapAttrs_cameraBearing com.mtafriends.tutor4u:cameraBearing}</code></td><td></td></tr>
            <tr><td><code>{@link #MapAttrs_cameraTargetLat com.mtafriends.tutor4u:cameraTargetLat}</code></td><td></td></tr>
            <tr><td><code>{@link #MapAttrs_cameraTargetLng com.mtafriends.tutor4u:cameraTargetLng}</code></td><td></td></tr>
@@ -971,6 +1003,7 @@ containing a value of this type.
            <tr><td><code>{@link #MapAttrs_useViewLifecycle com.mtafriends.tutor4u:useViewLifecycle}</code></td><td></td></tr>
            <tr><td><code>{@link #MapAttrs_zOrderOnTop com.mtafriends.tutor4u:zOrderOnTop}</code></td><td></td></tr>
            </table>
+           @see #MapAttrs_ambientEnabled
            @see #MapAttrs_cameraBearing
            @see #MapAttrs_cameraTargetLat
            @see #MapAttrs_cameraTargetLng
@@ -992,8 +1025,23 @@ containing a value of this type.
             0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009,
             0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d,
             0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011,
-            0x7f010012, 0x7f010013, 0x7f010014, 0x7f010015
+            0x7f010012, 0x7f010013, 0x7f010014, 0x7f010015,
+            0x7f010016
         };
+        /**
+          <p>This symbol is the offset where the {@link com.mtafriends.tutor4u.R.attr#ambientEnabled}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.mtafriends.tutor4u:ambientEnabled
+        */
+        public static final int MapAttrs_ambientEnabled = 16;
         /**
           <p>This symbol is the offset where the {@link com.mtafriends.tutor4u.R.attr#cameraBearing}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -1241,7 +1289,7 @@ containing a value of this type.
            @see #WalletFragmentOptions_fragmentStyle
          */
         public static final int[] WalletFragmentOptions = {
-            0x7f010016, 0x7f010017, 0x7f010018, 0x7f010019
+            0x7f010017, 0x7f010018, 0x7f010019, 0x7f01001a
         };
         /**
           <p>
@@ -1346,9 +1394,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #WalletFragmentStyle_maskedWalletDetailsTextAppearance
          */
         public static final int[] WalletFragmentStyle = {
-            0x7f01001a, 0x7f01001b, 0x7f01001c, 0x7f01001d,
-            0x7f01001e, 0x7f01001f, 0x7f010020, 0x7f010021,
-            0x7f010022, 0x7f010023, 0x7f010024
+            0x7f01001b, 0x7f01001c, 0x7f01001d, 0x7f01001e,
+            0x7f01001f, 0x7f010020, 0x7f010021, 0x7f010022,
+            0x7f010023, 0x7f010024, 0x7f010025
         };
         /**
           <p>
@@ -1362,7 +1410,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>google_wallet_classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>google_wallet_grayscale</code></td><td>2</td><td></td></tr>
+<tr><td><code>google_wallet_monochrome</code></td><td>3</td><td></td></tr>
+<tr><td><code>classic</code></td><td>1</td><td> TODO(waltercacau): Uncomment when Android Pay is launched to all developers:
+                <enum name="android_pay_dark" value="4"/>
+                <enum name="android_pay_light" value="5"/>
+                <enum name="android_pay_light_with_border" value="6"/> 
+ Deprecated values </td></tr>
 <tr><td><code>grayscale</code></td><td>2</td><td></td></tr>
 <tr><td><code>monochrome</code></td><td>3</td><td></td></tr>
 </table>
@@ -1411,7 +1466,10 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>buy_with_google</code></td><td>1</td><td></td></tr>
+<tr><td><code>buy_with</code></td><td>5</td><td></td></tr>
+<tr><td><code>logo_only</code></td><td>6</td><td></td></tr>
+<tr><td><code>donate_with</code></td><td>7</td><td></td></tr>
+<tr><td><code>buy_with_google</code></td><td>1</td><td> Deprecated values </td></tr>
 <tr><td><code>buy_now</code></td><td>2</td><td></td></tr>
 <tr><td><code>book_now</code></td><td>3</td><td></td></tr>
 <tr><td><code>donate_with_google</code></td><td>4</td><td></td></tr>
@@ -1513,7 +1571,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>google_wallet_classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>google_wallet_monochrome</code></td><td>2</td><td></td></tr>
+<tr><td><code>classic</code></td><td>1</td><td> TODO(waltercacau): Uncomment when Android Pay is launched to all developers:
+                <enum name="android_pay" value="3"/> 
+ Deprecated values </td></tr>
 <tr><td><code>monochrome</code></td><td>2</td><td></td></tr>
 </table>
           <p>This is a private symbol.
