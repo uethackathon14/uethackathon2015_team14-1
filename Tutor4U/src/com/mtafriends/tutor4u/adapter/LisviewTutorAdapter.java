@@ -1,6 +1,6 @@
 package com.mtafriends.tutor4u.adapter;
 
-import info.androidhive.slidingmenu.R;
+import com.mtafriends.tutor4u.R;
 
 import java.util.ArrayList;
 

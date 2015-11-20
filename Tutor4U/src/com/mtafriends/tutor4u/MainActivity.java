@@ -1,9 +1,7 @@
 package com.mtafriends.tutor4u;
 
-import info.androidhive.slidingmenu.R;
 import java.util.ArrayList;
-import com.mtafriends.tutor4u.adapter.NavDrawerListAdapter;
-import com.mtafriends.tutor4u.model.NavDrawerItem;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
@@ -20,6 +18,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.mtafriends.bean.getInfomationTutor;
+import com.mtafriends.tutor4u.adapter.NavDrawerListAdapter;
+import com.mtafriends.tutor4u.model.NavDrawerItem;
 
 @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class MainActivity extends Activity {
@@ -39,12 +41,13 @@ public class MainActivity extends Activity {
 
 	private ArrayList<NavDrawerItem> navDrawerItems;
 	private NavDrawerListAdapter adapter;
-
+	String urlJson = "http://tutor4u-anhdat.rhcloud.com/TutorWS/data/json/listtutor";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
+		getInfomationTutor tutor = new getInfomationTutor();
+		tutor.getJsonFromUrl(urlJson);
 		mTitle = mDrawerTitle = getTitle();
 
 		// load slide menu items
