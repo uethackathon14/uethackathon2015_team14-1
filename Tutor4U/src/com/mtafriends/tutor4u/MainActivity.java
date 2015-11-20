@@ -19,7 +19,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.mtafriends.bean.getInfomationTutor;
 import com.mtafriends.tutor4u.adapter.NavDrawerListAdapter;
 import com.mtafriends.tutor4u.model.NavDrawerItem;
 
@@ -46,8 +45,6 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		getInfomationTutor tutor = new getInfomationTutor();
-		tutor.getJsonFromUrl(urlJson);
 		mTitle = mDrawerTitle = getTitle();
 
 		// load slide menu items

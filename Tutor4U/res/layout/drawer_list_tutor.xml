@@ -18,8 +18,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/icon"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/avaTutor"
         android:orientation="vertical" >
 
         <TextView
@@ -28,12 +28,14 @@
             android:layout_height="match_parent"
             android:text="@string/list_drawer_name"
             android:textColor="@color/text_color" />
+
         <TextView
             android:id="@+id/txtSubject"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/list_drawer_subject"
             android:textColor="@color/text_color" />
+
         <TextView
             android:id="@+id/txtLevel"
             android:layout_width="wrap_content"
