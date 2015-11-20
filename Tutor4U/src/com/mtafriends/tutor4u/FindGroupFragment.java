@@ -24,7 +24,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 public class FindGroupFragment extends Fragment implements LocationListener{
-	GoogleMap map;
+	GoogleMap map;//Maps
 	private LocationManager locationManager;
 	// The minimum distance to change Updates in meters
 	private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 1; // 1 meter
