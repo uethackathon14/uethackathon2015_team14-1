@@ -1,8 +1,9 @@
 package com.mtafriends.tutor4u.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Tutor {
+public class Tutor implements Serializable {
 	private String username;
 	private String email;
 	private String name;
@@ -14,10 +15,17 @@ public class Tutor {
 	private int type;
 	private int status;
 	private String subject;
+	private String description;
 	
 	
 	
 	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	public String getSubject() {
 		return subject;
 	}

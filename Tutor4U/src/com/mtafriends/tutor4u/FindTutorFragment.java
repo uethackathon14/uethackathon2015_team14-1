@@ -10,6 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,12 +18,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.mtafriends.tutor4u.adapter.ListviewTutorAdapter;
 import com.mtafriends.tutor4u.model.Tutor;
@@ -130,6 +131,18 @@ public class FindTutorFragment extends Fragment {
 								+ "/"
 								+ convertToUTF8(lstLevel.get(poslevel)));
 
+			}
+		});
+		
+		lvTutor.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int pos,
+					long arg3) {
+				Intent intent = new Intent(getActivity(),Detail_Tutor_Activity.class);
+				intent.putExtra("tutor", lstTutor.get(pos));
+				startActivity(intent);
+				
 			}
 		});
 
