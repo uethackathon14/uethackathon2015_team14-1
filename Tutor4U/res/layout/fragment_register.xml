@@ -53,12 +53,24 @@
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/custom_button"
             android:text="Tạo tài khoản"
             android:textColor="#FFFFFF"
             android:textSize="@dimen/activity_horizontal_margin"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="#5CDB02"
+        android:text="Đăng Nhập"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/activity_horizontal_margin"
+        android:textStyle="bold" />
 
 </LinearLayout>

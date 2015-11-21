@@ -36,6 +36,11 @@ public final class R {
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
+
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
@@ -45,95 +50,107 @@ public final class R {
     }
     public static final class drawable {
         public static final int ava=0x7f020000;
-        public static final int counter_bg=0x7f020001;
-        public static final int custom_button=0x7f020002;
-        public static final int ic_action_add_group=0x7f020003;
-        public static final int ic_action_call=0x7f020004;
-        public static final int ic_action_search=0x7f020005;
-        public static final int ic_communities=0x7f020006;
-        public static final int ic_drawer=0x7f020007;
-        public static final int ic_flag_location=0x7f020008;
-        public static final int ic_group_location=0x7f020009;
-        public static final int ic_home=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
-        public static final int ic_pages=0x7f02000c;
-        public static final int ic_people=0x7f02000d;
-        public static final int ic_photos=0x7f02000e;
-        public static final int ic_whats_hot=0x7f02000f;
-        public static final int list_item_bg_normal=0x7f020010;
-        public static final int list_item_bg_pressed=0x7f020011;
-        public static final int list_selector=0x7f020012;
+        public static final int complete_ico=0x7f020001;
+        public static final int counter_bg=0x7f020002;
+        public static final int custom_button=0x7f020003;
+        public static final int ic_action_add_group=0x7f020004;
+        public static final int ic_action_call=0x7f020005;
+        public static final int ic_action_search=0x7f020006;
+        public static final int ic_communities=0x7f020007;
+        public static final int ic_drawer=0x7f020008;
+        public static final int ic_flag_location=0x7f020009;
+        public static final int ic_group_location=0x7f02000a;
+        public static final int ic_home=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int ic_pages=0x7f02000d;
+        public static final int ic_people=0x7f02000e;
+        public static final int ic_photos=0x7f02000f;
+        public static final int ic_whats_hot=0x7f020010;
+        public static final int list_item_bg_normal=0x7f020011;
+        public static final int list_item_bg_pressed=0x7f020012;
+        public static final int list_selector=0x7f020013;
     }
     public static final class id {
-        public static final int action=0x7f0b002f;
-        public static final int action_1=0x7f0b0030;
-        public static final int avaTutor=0x7f0b0013;
-        public static final int btnAdd=0x7f0b001a;
-        public static final int btnCall=0x7f0b000b;
-        public static final int btnRegister=0x7f0b002e;
-        public static final int btnSearch=0x7f0b001b;
-        public static final int counter=0x7f0b0012;
-        public static final int drawer_layout=0x7f0b0000;
-        public static final int edtDecribsion=0x7f0b0028;
-        public static final int edtDisplayName=0x7f0b002d;
-        public static final int edtDistance=0x7f0b0022;
-        public static final int edtLocation=0x7f0b0024;
-        public static final int edtMemberCount=0x7f0b0026;
-        public static final int edtNameSubject=0x7f0b0020;
-        public static final int edtPassword=0x7f0b002b;
-        public static final int edtPasswordAgain=0x7f0b002c;
-        public static final int edtUsername=0x7f0b002a;
-        public static final int fieldInput=0x7f0b001d;
-        public static final int fieldInput1=0x7f0b001e;
-        public static final int frame_container=0x7f0b0001;
-        public static final int function=0x7f0b0019;
-        public static final int icon=0x7f0b0010;
-        public static final int imageView1=0x7f0b0004;
-        public static final int linearLayout1=0x7f0b0003;
-        public static final int list_slidermenu=0x7f0b0002;
-        public static final int lvTutor=0x7f0b0029;
-        public static final int main=0x7f0b0016;
-        public static final int main2=0x7f0b0018;
-        public static final int map=0x7f0b0017;
-        public static final int scrollView1=0x7f0b001c;
-        public static final int spinCity=0x7f0b000d;
-        public static final int spinLevel=0x7f0b000f;
-        public static final int spinSubject=0x7f0b000e;
-        public static final int tableRow1=0x7f0b000c;
-        public static final int title=0x7f0b0011;
-        public static final int txtDecribsion=0x7f0b0027;
-        public static final int txtDistance=0x7f0b0021;
-        public static final int txtEmail=0x7f0b0009;
-        public static final int txtLabel=0x7f0b0015;
-        public static final int txtLevel=0x7f0b0007;
-        public static final int txtLocation=0x7f0b0023;
-        public static final int txtMemberCount=0x7f0b0025;
-        public static final int txtMobie=0x7f0b000a;
-        public static final int txtName=0x7f0b0005;
-        public static final int txtNameSubject=0x7f0b001f;
-        public static final int txtNameTutor=0x7f0b0014;
-        public static final int txtSubject=0x7f0b0006;
-        public static final int txt_decribsion=0x7f0b0008;
+        public static final int action=0x7f0b0034;
+        public static final int action_1=0x7f0b0035;
+        public static final int action_settings=0x7f0b0033;
+        public static final int avaTutor=0x7f0b0022;
+        public static final int btnAdd=0x7f0b0029;
+        public static final int btnCall=0x7f0b001a;
+        public static final int btnCompleteInfo=0x7f0b0008;
+        public static final int btnCreate=0x7f0b0019;
+        public static final int btnLogin=0x7f0b0032;
+        public static final int btnLoginTutor=0x7f0b000b;
+        public static final int btnRegister=0x7f0b0031;
+        public static final int btnSearch=0x7f0b002a;
+        public static final int counter=0x7f0b0021;
+        public static final int drawer_layout=0x7f0b000c;
+        public static final int edtDecribsion=0x7f0b0018;
+        public static final int edtDisplayName=0x7f0b0030;
+        public static final int edtDistance=0x7f0b002d;
+        public static final int edtLocation=0x7f0b0014;
+        public static final int edtMemberCount=0x7f0b0016;
+        public static final int edtNameSubject=0x7f0b0012;
+        public static final int edtPassword=0x7f0b000a;
+        public static final int edtPasswordAgain=0x7f0b002f;
+        public static final int edtUsername=0x7f0b0009;
+        public static final int fieldInput=0x7f0b000f;
+        public static final int fieldInput1=0x7f0b0010;
+        public static final int frame_container=0x7f0b000d;
+        public static final int function=0x7f0b0028;
+        public static final int icon=0x7f0b001f;
+        public static final int imageView1=0x7f0b0001;
+        public static final int linearLayout1=0x7f0b0000;
+        public static final int list_slidermenu=0x7f0b000e;
+        public static final int lvTutor=0x7f0b002e;
+        public static final int main=0x7f0b0025;
+        public static final int main2=0x7f0b0027;
+        public static final int map=0x7f0b0026;
+        public static final int scrollView1=0x7f0b002b;
+        public static final int spinCity=0x7f0b001c;
+        public static final int spinLevel=0x7f0b001e;
+        public static final int spinSubject=0x7f0b001d;
+        public static final int tableRow1=0x7f0b001b;
+        public static final int title=0x7f0b0020;
+        public static final int txtDecribsion=0x7f0b0017;
+        public static final int txtDistance=0x7f0b002c;
+        public static final int txtEmail=0x7f0b0006;
+        public static final int txtLabel=0x7f0b0024;
+        public static final int txtLevel=0x7f0b0004;
+        public static final int txtLocation=0x7f0b0013;
+        public static final int txtMemberCount=0x7f0b0015;
+        public static final int txtMobie=0x7f0b0007;
+        public static final int txtName=0x7f0b0002;
+        public static final int txtNameSubject=0x7f0b0011;
+        public static final int txtNameTutor=0x7f0b0023;
+        public static final int txtSubject=0x7f0b0003;
+        public static final int txt_decribsion=0x7f0b0005;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int detail_tutor=0x7f030001;
-        public static final int dialog_search_tutor=0x7f030002;
-        public static final int drawer_list_item=0x7f030003;
-        public static final int drawer_list_tutor=0x7f030004;
-        public static final int fragment_community=0x7f030005;
-        public static final int fragment_find_group=0x7f030006;
-        public static final int fragment_findtutor=0x7f030007;
-        public static final int fragment_pages=0x7f030008;
-        public static final int fragment_register=0x7f030009;
-        public static final int fragment_whats_hot=0x7f03000a;
+        public static final int activity_complete_info=0x7f030000;
+        public static final int activity_login=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int create_groups=0x7f030003;
+        public static final int detail_tutor=0x7f030004;
+        public static final int dialog_search_tutor=0x7f030005;
+        public static final int drawer_list_item=0x7f030006;
+        public static final int drawer_list_tutor=0x7f030007;
+        public static final int fragment_about=0x7f030008;
+        public static final int fragment_find_group=0x7f030009;
+        public static final int fragment_findtutor=0x7f03000a;
+        public static final int fragment_pages=0x7f03000b;
+        public static final int fragment_register=0x7f03000c;
+        public static final int fragment_whats_hot=0x7f03000d;
+        public static final int search_groups=0x7f03000e;
     }
     public static final class menu {
-        public static final int fragment_menu=0x7f0a0000;
-        public static final int main=0x7f0a0001;
+        public static final int complete_info=0x7f0a0000;
+        public static final int fragment_menu=0x7f0a0001;
+        public static final int login=0x7f0a0002;
+        public static final int main=0x7f0a0003;
     }
     public static final class string {
         public static final int action_search=0x7f060002;
@@ -148,6 +165,8 @@ public final class R {
         public static final int list_drawer_level=0x7f060008;
         public static final int list_drawer_name=0x7f060006;
         public static final int list_drawer_subject=0x7f060007;
+        public static final int title_activity_complete_info=0x7f06000c;
+        public static final int title_activity_login=0x7f06000b;
         public static final int txt_decribsion=0x7f060009;
     }
     public static final class style {
