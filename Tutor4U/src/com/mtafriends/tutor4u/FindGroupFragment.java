@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -38,10 +39,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class FindGroupFragment extends Fragment implements OnClickListener {
@@ -74,6 +75,7 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 	private Button btnSearch;
 	private Button btnCreate;
 
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		try {
@@ -93,7 +95,7 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 			StrictMode.setThreadPolicy(policy);
 
 		} catch (Exception e) {
-			Toast.makeText(null, e.toString(), Toast.LENGTH_SHORT).show();
+			e.printStackTrace();
 		}
 		return rootView;
 	}
@@ -195,14 +197,14 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 
 			}
 		});
-		
+
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setView(dialoglayout);
 		builder.setTitle("Tạo nhóm học");
 		builder.setNegativeButton("Áp dụng", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				 Search(km,nameSubject);
+				Search(km, nameSubject);
 			}
 		});
 		builder.setPositiveButton("Hủy", new DialogInterface.OnClickListener() {
@@ -257,12 +259,12 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 		Marcur.remove();
 		drawMaker();
 		String url = "http://tutor4u-anhdat.rhcloud.com/TutorWS/data/json/nearby/" + getLocation().getLatitude() + "/"
-				+ getLocation().getLongitude() + "/" + km + "/" + convertToUTF8(nameSubject);		
+				+ getLocation().getLongitude() + "/" + km + "/" + convertToUTF8(nameSubject);
 		String jsonString = callURL(url);
 		JSONObject json = null;
 		try {
 			JSONArray jArray = new JSONArray(jsonString);
-			
+
 			for (int i = 0; i < jArray.length(); i++) {
 				json = jArray.getJSONObject(i);
 
@@ -283,7 +285,7 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 
 				MarkerOptions option = new MarkerOptions();
 				option.title(username);
-				option.snippet(name_subject+"- Tổng số: "+countNow+"/"+limit_mem);
+				option.snippet(name_subject + "- Tổng số: " + countNow + "/" + limit_mem);
 				option.position(new LatLng(latitude, longitude));
 				option.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_group_location));
 				Marcur = map.addMarker(option);
@@ -427,4 +429,6 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 			break;
 		}
 	}
+	
+	
 }
