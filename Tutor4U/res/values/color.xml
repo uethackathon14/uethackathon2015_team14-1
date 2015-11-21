@@ -8,4 +8,8 @@
     <color name="counter_text_color">#c5c4c4</color>
     <color name="text_color">#190707</color>
     <color name="listview_choose_tutors_color">#FBF2EF</color>
+    
+    <color name="bg_button">#C60000</color>
+    <color name="bg_press_button">#CD3700</color>
+    
 </resources>

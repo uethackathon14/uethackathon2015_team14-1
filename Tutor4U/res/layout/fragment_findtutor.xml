@@ -2,12 +2,47 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:weightSum="1" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/spinCity"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05" />
+
+        <Spinner
+            android:id="@+id/spinSubject"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05" />
+
+        <Spinner
+            android:id="@+id/spinLevel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05" />
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="0dp"
+            android:text="Tìm"
+            android:textColor="#ffffff"
+            android:background="@drawable/custom_button"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/lvTutor"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="0dp"
+        android:layout_weight="0.85" >
     </ListView>
 
 </LinearLayout>

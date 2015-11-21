@@ -26,6 +26,7 @@
             android:id="@+id/txtNameTutor"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:textStyle="bold"
             android:text="@string/list_drawer_name"
             android:textColor="@color/text_color" />
 
@@ -41,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/list_drawer_level"
-            android:textColor="@color/text_color" />
+            android:textColor="@color/bg_button" />
     </LinearLayout>
 
 </RelativeLayout>

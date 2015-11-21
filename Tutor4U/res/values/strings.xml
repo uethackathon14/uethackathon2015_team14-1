@@ -34,6 +34,6 @@
     
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
-    <integer name="google_play_services_version">8115000</integer>
+    <integer name="google_play_services_version">7571000</integer>
 
 </resources>

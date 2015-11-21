@@ -72,7 +72,7 @@ public class ListviewTutorAdapter extends BaseAdapter {
 		Tutor item = lstTutor.get(position);
 		holder.ivAvatar.setImageResource(R.drawable.ic_home);
 		holder.txtName.setText(item.getName());
-		holder.txtSubject.setText(item.getEmail());
+		holder.txtSubject.setText(item.getSubject());
 		holder.txtLevel.setText(item.getLevel());
 
 		return view;

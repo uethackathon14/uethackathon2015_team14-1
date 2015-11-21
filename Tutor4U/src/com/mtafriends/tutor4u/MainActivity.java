@@ -4,8 +4,11 @@ import java.util.ArrayList;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Build;
@@ -13,17 +16,21 @@ import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import com.mtafriends.tutor4u.adapter.NavDrawerListAdapter;
 import com.mtafriends.tutor4u.model.NavDrawerItem;
 
 @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class MainActivity extends Activity {
+	
+	
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
@@ -126,6 +133,7 @@ public class MainActivity extends Activity {
 		}
 	}
 
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
@@ -139,13 +147,22 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		// Handle action bar actions click
-		switch (item.getItemId()) {
+		/*switch (item.getItemId()) {
 		case R.id.action_settings:
+			
+			createDialogLogin();
+			
+			
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+		*/
+		return true;
 	}
+	
+	
+	
 
 	/* *
 	 * Called when invalidateOptionsMenu() is triggered
@@ -154,7 +171,7 @@ public class MainActivity extends Activity {
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		// if nav drawer is opened, hide the action items
 		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-		menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+	//	menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
 		return super.onPrepareOptionsMenu(menu);
 	}
 
