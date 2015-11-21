@@ -59,12 +59,17 @@ public final class R {
         public static final int list_selector=0x7f02000e;
     }
     public static final class id {
-        public static final int action=0x7f0b0012;
-        public static final int action_1=0x7f0b0013;
+        public static final int action=0x7f0b0017;
+        public static final int action_1=0x7f0b0018;
         public static final int avaTutor=0x7f0b000a;
+        public static final int btnRegister=0x7f0b0016;
         public static final int btnSearch=0x7f0b0010;
         public static final int counter=0x7f0b0009;
         public static final int drawer_layout=0x7f0b0000;
+        public static final int edtDisplayName=0x7f0b0015;
+        public static final int edtPassword=0x7f0b0013;
+        public static final int edtPasswordAgain=0x7f0b0014;
+        public static final int edtUsername=0x7f0b0012;
         public static final int frame_container=0x7f0b0001;
         public static final int icon=0x7f0b0007;
         public static final int list_slidermenu=0x7f0b0002;
