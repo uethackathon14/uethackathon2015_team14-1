@@ -10,6 +10,7 @@
     <string name="list_drawer_name">Tên gia sư :</string>
      <string name="list_drawer_subject">Môn giảng dạy :</string>
      <string name="list_drawer_level">Trình độ :</string>
+     <string name="txt_decribsion">Rất đẹp trai</string>
     
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
@@ -34,6 +35,6 @@
     
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
-    <integer name="google_play_services_version">7571000</integer>
+    <integer name="google_play_services_version">8115000</integer>
 
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="list_item_title">#fff</color>
+        <color name="list_item_title">#fff</color>
     <color name="list_background">#303030</color>
     <color name="list_background_pressed">#992416</color>
     <color name="list_divider">#272727</color>
@@ -8,6 +8,8 @@
     <color name="counter_text_color">#c5c4c4</color>
     <color name="text_color">#190707</color>
     <color name="listview_choose_tutors_color">#FBF2EF</color>
+     <color name="color_text_black">#646762</color>
+      <color name="color_bg_white">#E6E6E6</color>
     
     <color name="bg_button">#C60000</color>
     <color name="bg_press_button">#CD3700</color>
