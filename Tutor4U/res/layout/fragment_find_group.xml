@@ -6,17 +6,17 @@
     android:weightSum="100" >
 
     <LinearLayout
-        android:id="@+id/main"
+        android:id="@+id/main_Search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="30"
+        android:layout_weight="40"
         android:orientation="vertical" >
 
         <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.MapFragment"
             android:layout_width="wrap_content"
-            android:layout_height="302dp" />
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <LinearLayout
@@ -27,145 +27,51 @@
         android:orientation="vertical"
         android:weightSum="100" >
 
-        <RelativeLayout
-            android:id="@+id/function"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="80"
-            android:orientation="horizontal"
-            android:weightSum="100" >
-
-            <Button
-                android:id="@+id/btnAdd"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="76dp"
-                android:background="@drawable/ic_action_add_group"
-                android:gravity="right" />
-
-            <Button
-                android:id="@+id/btnSearch"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="96dp"
-                android:background="@drawable/ic_action_search"
-                android:gravity="left" />
-
-        </RelativeLayout>
-
         <ScrollView
             android:id="@+id/scrollView1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="20" >
 
-            <LinearLayout
-                android:id="@+id/fieldInput"
+            <TabHost
+                android:id="@android:id/tabhost"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
+                android:layout_height="match_parent" >
 
                 <LinearLayout
-                    android:id="@+id/fieldInput1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical" >
 
-                    <LinearLayout
+                    <TabWidget
+                        android:id="@android:id/tabs"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal" >
+                        android:layout_height="wrap_content" >
+                    </TabWidget>
 
-                        <TextView
-                            android:id="@+id/txtNameSubject"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Tên Môn" />
-
-                        <EditText
-                            android:id="@+id/edtNameSubject"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal" >
+                        android:layout_height="match_parent" >
 
-                        <TextView
-                            android:id="@+id/txtDistance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Khoảng Cách" />
+                        <LinearLayout
+                            android:id="@+id/Search"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+							
+                            <include layout="@layout/search_groups" />
+                        </LinearLayout>
 
-                        <EditText
-                            android:id="@+id/edtDistance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10" />
-                    </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/Create"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal" >
-
-                        <TextView
-                            android:id="@+id/txtLocation"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Địa Điểm" />
-
-                        <EditText
-                            android:id="@+id/edtLocation"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal" >
-
-                        <TextView
-                            android:id="@+id/txtMemberCount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Member Count" />
-
-                        <EditText
-                            android:id="@+id/edtMemberCount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal" >
-
-                        <TextView
-                            android:id="@+id/txtDecribsion"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mô tả" />
-
-                        <EditText
-                            android:id="@+id/edtDecribsion"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10" />
-                    </LinearLayout>
+                            <include layout="@layout/create_groups" />
+                        </LinearLayout>
+                    </FrameLayout>
                 </LinearLayout>
-            </LinearLayout>
+            </TabHost>
         </ScrollView>
     </LinearLayout>
 

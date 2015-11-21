@@ -1,19 +1,11 @@
 package com.mtafriends.tutor4u;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
-import org.apache.http.util.LangUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,10 +31,13 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TabHost;
 import android.widget.Toast;
 
-public class FindGroupFragment extends Fragment {
+public class FindGroupFragment extends Fragment implements OnClickListener{
 	GoogleMap map;// Maps
 	private LocationManager locationManager;
 
@@ -66,19 +61,30 @@ public class FindGroupFragment extends Fragment {
 
 	public FindGroupFragment() {
 	}
-
+	View rootView;
+	private Button btnSearch;
+	private Button btnCreate;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-		View rootView = inflater.inflate(R.layout.fragment_find_group, container, false);
+		rootView = inflater.inflate(R.layout.fragment_find_group, container, false);
 		checkGPS();
-
+		btnSearch = (Button) rootView.findViewById(R.id.btnSearch);
+		btnCreate = (Button) rootView.findViewById(R.id.btnCreate);
+		btnSearch.setOnClickListener(this);
+		btnCreate.setOnClickListener(this);
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 		drawMaker();
 
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 
+		loadTab();
+		return rootView;
+	}
+	
+	private void Search()
+	{
 		String url = "http://tutor4u-anhdat.rhcloud.com/TutorWS/data/json/nearby/21.038665/105.782558";
 		String jsonString = callURL(url);
 		JSONObject json = null;
@@ -107,11 +113,9 @@ public class FindGroupFragment extends Fragment {
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
-		}
-
-		return rootView;
+		}	
 	}
-
+	
 	public static String callURL(String myURL) {
 		System.out.println("Requested URL:" + myURL);
 		StringBuilder sb = new StringBuilder();
@@ -234,5 +238,44 @@ public class FindGroupFragment extends Fragment {
 		}
 
 		return location;
+	}
+	
+	TabHost tab;
+
+	public void loadTab() {
+		
+		tab = (TabHost) rootView.findViewById(android.R.id.tabhost);
+
+		tab.setup();
+		TabHost.TabSpec spec;
+		spec = tab.newTabSpec("t1");
+		spec.setContent(R.id.Search);
+		spec.setIndicator("Tìm nhóm");
+		tab.addTab(spec);
+
+		spec = tab.newTabSpec("t2");
+		spec.setContent(R.id.Create);
+		spec.setIndicator("Tạo nhóm");
+		tab.addTab(spec);
+		
+		tab.setCurrentTab(0);
+
+	}
+	
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.btnCreate:
+			Toast.makeText(getActivity(), "Create", Toast.LENGTH_LONG).show();
+			break;
+		case R.id.btnSearch:
+			Search();
+			Toast.makeText(getActivity(), "Search", Toast.LENGTH_LONG).show();
+			break;
+		default:
+			Toast.makeText(getActivity(), "Failed", Toast.LENGTH_LONG).show();
+			break;
+		}
 	}
 }
