@@ -125,7 +125,8 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 						@Override
 						public void onClick(View v) {
 							// TODO Auto-generated method stub
-
+									//add gr
+							popupWindow.dismiss();
 						}
 					});
 
@@ -133,7 +134,8 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 						@Override
 						public void onClick(View v) {
 							// TODO Auto-generated method stub
-
+							Intent intent= new Intent(getActivity(),DetailGroupActivity.class);
+							startActivity(intent);
 						}
 					});
 
@@ -285,6 +287,7 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// Search();
+				
 			}
 		});
 		builder.setPositiveButton("Hủy", new DialogInterface.OnClickListener() {

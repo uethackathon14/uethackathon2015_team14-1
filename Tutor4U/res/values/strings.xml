@@ -28,7 +28,7 @@
         <item>@drawable/ic_home</item>
         <item>@drawable/ic_people</item>
         <item>@drawable/ic_photos</item>
-        <item>@drawable/ic_communities</item>
+        <item>@drawable/ic_action_about</item>
         <item>@drawable/ic_pages</item>
         <item>@drawable/ic_whats_hot</item>
     </array>
@@ -40,5 +40,6 @@
 
     <string name="title_activity_login">Đăng Nhập</string>
     <string name="title_activity_complete_info">Hoàn thiện thông tin</string>
+    <string name="title_activity_detail_group">Chi tiết nhóm</string>
 
 </resources>
