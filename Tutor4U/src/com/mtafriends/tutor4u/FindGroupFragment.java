@@ -83,7 +83,7 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 	private LinearLayout main_layout;
 	private View popupView;
 	private PopupWindow popupWindow;
-	
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		try {
@@ -102,7 +102,8 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 			map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 				@Override
 				public boolean onMarkerClick(com.google.android.gms.maps.model.Marker marker) {
-					marker.showInfoWindow();
+					if (marker.getTitle() != "Vị trí hiện tại")
+						{marker.showInfoWindow();Toast.makeText(getActivity(), marker.getTitle(), Toast.LENGTH_SHORT).show();}
 					return true;
 				}
 			});
@@ -114,10 +115,8 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 					LayoutInflater layoutInflater = (LayoutInflater) getActivity()
 							.getSystemService(getActivity().LAYOUT_INFLATER_SERVICE);
 					popupView = layoutInflater.inflate(R.layout.popup, null);
-					popupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT,
-							LayoutParams.WRAP_CONTENT);
-					//popupWindow.setOutsideTouchable(true);
-					
+					popupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+					// popupWindow.setOutsideTouchable(true);
 
 					Button btnJoin = (Button) popupView.findViewById(R.id.Join);
 					Button btnDetail = (Button) popupView.findViewById(R.id.Detail);
@@ -125,7 +124,8 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 						@Override
 						public void onClick(View v) {
 							// TODO Auto-generated method stub
-									//add gr
+							// add gr
+							Toast.makeText(getActivity(), "Tham gia thành công!", Toast.LENGTH_LONG).show();
 							popupWindow.dismiss();
 						}
 					});
@@ -134,7 +134,7 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 						@Override
 						public void onClick(View v) {
 							// TODO Auto-generated method stub
-							Intent intent= new Intent(getActivity(),DetailGroupActivity.class);
+							Intent intent = new Intent(getActivity(), DetailGroupActivity.class);
 							startActivity(intent);
 						}
 					});
@@ -143,7 +143,7 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 
 				}
 			});
-			
+
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 			StrictMode.setThreadPolicy(policy);
 
@@ -287,7 +287,7 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// Search();
-				
+
 			}
 		});
 		builder.setPositiveButton("Hủy", new DialogInterface.OnClickListener() {
@@ -484,6 +484,7 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 			break;
 		}
 	}
+
 	public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 		public MarkerInfoWindowAdapter() {
 		}
@@ -498,19 +499,17 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 		public View getInfoContents(Marker marker) {
 
 			View v = getActivity().getLayoutInflater().inflate(R.layout.info, null);
-			Toast.makeText(getActivity(), marker.getTitle(), Toast.LENGTH_SHORT).show();
-			if (marker.getTitle() != "Vị trí hiện tại") {
-				TextView markerTitle = (TextView) v.findViewById(R.id.txttitle);
-				TextView markerSnippet = (TextView) v.findViewById(R.id.txtsnippet);
 
-				// Log.d("a", "myMarker" + myMarker.getUsername());
-				markerTitle.setText(marker.getTitle());
-				markerSnippet.setText(marker.getSnippet());
+			TextView markerTitle = (TextView) v.findViewById(R.id.txttitle);
+			TextView markerSnippet = (TextView) v.findViewById(R.id.txtsnippet);
 
-			}
+			// Log.d("a", "myMarker" + myMarker.getUsername());
+			markerTitle.setText(marker.getTitle());
+			markerSnippet.setText(marker.getSnippet());
+
 			return v;
 
 		}
 	}
-	
+
 }
