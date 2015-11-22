@@ -535,21 +535,22 @@ containing a value of this type.
         public static final int ic_group_location=0x7f02002a;
         public static final int ic_home=0x7f02002b;
         public static final int ic_launcher=0x7f02002c;
-        public static final int ic_pages=0x7f02002d;
-        public static final int ic_people=0x7f02002e;
-        public static final int ic_photos=0x7f02002f;
-        public static final int ic_plusone_medium_off_client=0x7f020030;
-        public static final int ic_plusone_small_off_client=0x7f020031;
-        public static final int ic_plusone_standard_off_client=0x7f020032;
-        public static final int ic_plusone_tall_off_client=0x7f020033;
-        public static final int ic_whats_hot=0x7f020034;
-        public static final int ico_btnadd=0x7f020035;
-        public static final int list_item_bg_normal=0x7f020036;
-        public static final int list_item_bg_pressed=0x7f020037;
-        public static final int list_selector=0x7f020038;
-        public static final int my_custom_background=0x7f020039;
-        public static final int powered_by_google_dark=0x7f02003a;
-        public static final int powered_by_google_light=0x7f02003b;
+        public static final int ic_lunch_main=0x7f02002d;
+        public static final int ic_pages=0x7f02002e;
+        public static final int ic_people=0x7f02002f;
+        public static final int ic_photos=0x7f020030;
+        public static final int ic_plusone_medium_off_client=0x7f020031;
+        public static final int ic_plusone_small_off_client=0x7f020032;
+        public static final int ic_plusone_standard_off_client=0x7f020033;
+        public static final int ic_plusone_tall_off_client=0x7f020034;
+        public static final int ic_whats_hot=0x7f020035;
+        public static final int ico_btnadd=0x7f020036;
+        public static final int list_item_bg_normal=0x7f020037;
+        public static final int list_item_bg_pressed=0x7f020038;
+        public static final int list_selector=0x7f020039;
+        public static final int my_custom_background=0x7f02003a;
+        public static final int powered_by_google_dark=0x7f02003b;
+        public static final int powered_by_google_light=0x7f02003c;
     }
     public static final class id {
         public static final int Detail=0x7f070055;

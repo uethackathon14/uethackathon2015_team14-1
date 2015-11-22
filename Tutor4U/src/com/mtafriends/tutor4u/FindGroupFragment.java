@@ -22,6 +22,8 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.mtafriends.tutor4u.model.GroupStudy;
+
+import android.R.integer;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -44,6 +46,7 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
@@ -84,17 +87,18 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 	private View popupView;
 	private PopupWindow popupWindow;
 
+	private int possubject;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		try {
+			
 			rootView = inflater.inflate(R.layout.fragment_find_group, container, false);
 			checkGPS();
 			btnSearch = (Button) rootView.findViewById(R.id.btnSearch);
 			btnCreate = (Button) rootView.findViewById(R.id.btnAdd);
-			// btnJoin = (Button) rootView.findViewById(R.id.btnJoin);
 			btnSearch.setOnClickListener(this);
 			btnCreate.setOnClickListener(this);
-
 			map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 
 			drawMaker();
@@ -102,8 +106,12 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 			map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 				@Override
 				public boolean onMarkerClick(com.google.android.gms.maps.model.Marker marker) {
-					if (marker.getTitle() != "Vị trí hiện tại")
-						{marker.showInfoWindow();Toast.makeText(getActivity(), marker.getTitle(), Toast.LENGTH_SHORT).show();}
+					if (!marker.getTitle().equals("Vị trí hiện tại")) {
+						marker.showInfoWindow();
+						Toast.makeText(getActivity(), marker.getTitle(), Toast.LENGTH_SHORT).show();
+					} else {
+
+					}
 					return true;
 				}
 			});
@@ -201,6 +209,52 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 		}
 	}
 
+	private class TaskCreate extends AsyncTask<String, Void, Void> {
+		String username;
+		int id_subject;
+		int limit_mem;
+		String time_study;
+		String details;
+		Double latitude;
+		Double longitude;
+
+		public TaskCreate(String username, int id_subject, int limit_mem, String time_study, String details,
+				Double latitude, Double longitude) {
+			super();
+			this.username = username;
+			this.id_subject = id_subject;
+			this.limit_mem = limit_mem;
+			this.time_study = time_study;
+			this.details = details;
+			this.latitude = latitude;
+			this.longitude = longitude;
+		}
+
+		@Override
+		protected Void doInBackground(String... params) {
+
+			String jsonString = "";
+			try {
+				URL url = new URL(params[0]);
+				URLConnection connection = url.openConnection();
+				connection.connect();
+				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+				bufferedReader.readLine();
+				
+			} catch (Exception e) {
+			}
+
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+			Toast.makeText(getActivity(), "Tạo nhóm thành công!", Toast.LENGTH_LONG).show();
+		}
+	}
+
 	int km = 0;
 	String nameSubject = "";
 
@@ -243,6 +297,7 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 		spinSubject.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				nameSubject = lstSubject.get(position);
+				position = position + 1;
 			}
 
 			@Override
@@ -286,8 +341,8 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 		builder.setNegativeButton("Áp dụng", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				// Search();
-
+				new TaskCreate("dokhacdat", 1, 10, "2-2-2016", "Hôm ý học nhóm", 21.0410079, 105.7888373)
+						.execute("http://tutor4u-anhdat.rhcloud.com/TutorWS/data/json/creategroup/dokhacdat/2/20/2-2-2015/abcd/21.0410079/105.7888373");
 			}
 		});
 		builder.setPositiveButton("Hủy", new DialogInterface.OnClickListener() {
