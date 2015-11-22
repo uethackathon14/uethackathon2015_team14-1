@@ -10,7 +10,7 @@
     <color name="listview_choose_tutors_color">#FBF2EF</color>
      <color name="color_text_black">#646762</color>
       <color name="color_bg_white">#E6E6E6</color>
-    
+    <color name="color_popup">#F5F5F5</color>
     <color name="bg_button">#C60000</color>
     <color name="bg_press_button">#CD3700</color>
     

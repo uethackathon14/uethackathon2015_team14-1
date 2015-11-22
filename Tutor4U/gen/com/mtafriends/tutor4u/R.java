@@ -426,9 +426,10 @@ containing a value of this type.
         public static final int zOrderOnTop=0x7f010014;
     }
     public static final class color {
-        public static final int bg_button=0x7f080021;
-        public static final int bg_press_button=0x7f080022;
+        public static final int bg_button=0x7f080022;
+        public static final int bg_press_button=0x7f080023;
         public static final int color_bg_white=0x7f080020;
+        public static final int color_popup=0x7f080021;
         public static final int color_text_black=0x7f08001f;
         public static final int common_action_bar_splitter=0x7f080009;
         /**  Sign-in Button Colors 
@@ -442,8 +443,8 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f080006;
         public static final int common_signin_btn_light_text_focused=0x7f080007;
         public static final int common_signin_btn_light_text_pressed=0x7f080005;
-        public static final int common_signin_btn_text_dark=0x7f080023;
-        public static final int common_signin_btn_text_light=0x7f080024;
+        public static final int common_signin_btn_text_dark=0x7f080024;
+        public static final int common_signin_btn_text_light=0x7f080025;
         public static final int counter_text_bg=0x7f08001b;
         public static final int counter_text_color=0x7f08001c;
         public static final int list_background=0x7f080018;
@@ -470,8 +471,8 @@ containing a value of this type.
         public static final int wallet_hint_foreground_holo_light=0x7f080011;
         public static final int wallet_holo_blue_light=0x7f080015;
         public static final int wallet_link_text_light=0x7f080016;
-        public static final int wallet_primary_text_holo_light=0x7f080025;
-        public static final int wallet_secondary_text_holo_dark=0x7f080026;
+        public static final int wallet_primary_text_holo_light=0x7f080026;
+        public static final int wallet_secondary_text_holo_dark=0x7f080027;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -548,9 +549,11 @@ containing a value of this type.
         public static final int powered_by_google_light=0x7f020038;
     }
     public static final class id {
-        public static final int action=0x7f070053;
-        public static final int action_1=0x7f070054;
-        public static final int action_settings=0x7f070052;
+        public static final int Detail=0x7f070051;
+        public static final int Join=0x7f070050;
+        public static final int action=0x7f070056;
+        public static final int action_1=0x7f070057;
+        public static final int action_settings=0x7f070055;
         public static final int adjust_height=0x7f070001;
         public static final int adjust_width=0x7f070002;
         public static final int avaTutor=0x7f070041;
@@ -558,11 +561,11 @@ containing a value of this type.
         public static final int btnAdd=0x7f070047;
         public static final int btnCall=0x7f07003a;
         public static final int btnCompleteInfo=0x7f070028;
+        public static final int btnExtras=0x7f07004f;
         public static final int btnLogin=0x7f07004c;
         public static final int btnLoginTutor=0x7f07002b;
         public static final int btnRegister=0x7f07004b;
         public static final int btnSearch=0x7f070046;
-        public static final int button=0x7f07004e;
         public static final int buyButton=0x7f07000e;
         public static final int buy_now=0x7f070013;
         public static final int buy_with=0x7f070014;
@@ -607,11 +610,10 @@ containing a value of this type.
         public static final int satellite=0x7f070006;
         public static final int selectionDetails=0x7f07000f;
         public static final int slide=0x7f07001f;
-        public static final int snippet=0x7f07004d;
         public static final int spinCity=0x7f07003c;
-        public static final int spinDistance=0x7f070051;
+        public static final int spinDistance=0x7f070054;
         public static final int spinLevel=0x7f07003d;
-        public static final int spinNameSubject=0x7f07004f;
+        public static final int spinNameSubject=0x7f070052;
         public static final int spinSubject=0x7f070031;
         public static final int strict_sandbox=0x7f07000c;
         public static final int tableRow1=0x7f07003b;
@@ -619,7 +621,7 @@ containing a value of this type.
         public static final int test=0x7f07000d;
         public static final int title=0x7f07003f;
         public static final int txtDecribsion=0x7f070038;
-        public static final int txtDistance=0x7f070050;
+        public static final int txtDistance=0x7f070053;
         public static final int txtEmail=0x7f070026;
         public static final int txtLabel=0x7f070043;
         public static final int txtLevel=0x7f070024;
@@ -632,6 +634,8 @@ containing a value of this type.
         public static final int txtSubject=0x7f070023;
         public static final int txtTime=0x7f070032;
         public static final int txt_decribsion=0x7f070025;
+        public static final int txtsnippet=0x7f07004e;
+        public static final int txttitle=0x7f07004d;
         public static final int wrap_content=0x7f070011;
     }
     public static final class integer {
@@ -653,7 +657,8 @@ containing a value of this type.
         public static final int fragment_register=0x7f03000c;
         public static final int fragment_whats_hot=0x7f03000d;
         public static final int info=0x7f03000e;
-        public static final int search_groups=0x7f03000f;
+        public static final int popup=0x7f03000f;
+        public static final int search_groups=0x7f030010;
     }
     public static final class menu {
         public static final int complete_info=0x7f0c0000;

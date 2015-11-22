@@ -11,14 +11,14 @@
         android:layout_marginRight="10dp" >
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/txttitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:text="Title" />
 
         <TextView
-            android:id="@+id/snippet"
+            android:id="@+id/txtsnippet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="snippet" />
@@ -26,9 +26,8 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button" 
+        android:id="@+id/btnExtras" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
-
+         />
 </LinearLayout>

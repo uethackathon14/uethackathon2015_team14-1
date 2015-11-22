@@ -6,6 +6,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -13,7 +14,7 @@ import org.json.JSONObject;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -21,7 +22,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.mtafriends.tutor4u.model.GroupStudy;
-
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
@@ -34,13 +35,17 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.WindowManager.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -75,6 +80,9 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 	private Button btnSearch;
 	private Button btnCreate;
 
+	private LinearLayout main_layout;
+	private View popupView;
+	private PopupWindow popupWindow;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -91,6 +99,49 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 
 			drawMaker();
 
+			map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+				@Override
+				public boolean onMarkerClick(com.google.android.gms.maps.model.Marker marker) {
+					marker.showInfoWindow();
+					return true;
+				}
+			});
+			map.setOnInfoWindowClickListener(new OnInfoWindowClickListener() {
+				@Override
+				public void onInfoWindowClick(Marker arg0) {
+					// TODO Auto-generated method stub
+
+					LayoutInflater layoutInflater = (LayoutInflater) getActivity()
+							.getSystemService(getActivity().LAYOUT_INFLATER_SERVICE);
+					popupView = layoutInflater.inflate(R.layout.popup, null);
+					popupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT,
+							LayoutParams.WRAP_CONTENT);
+					//popupWindow.setOutsideTouchable(true);
+					
+
+					Button btnJoin = (Button) popupView.findViewById(R.id.Join);
+					Button btnDetail = (Button) popupView.findViewById(R.id.Detail);
+					btnJoin.setOnClickListener(new Button.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							// TODO Auto-generated method stub
+
+						}
+					});
+
+					btnDetail.setOnClickListener(new Button.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							// TODO Auto-generated method stub
+
+						}
+					});
+
+					popupWindow.showAtLocation(rootView, Gravity.CENTER, 50, 50);
+
+				}
+			});
+			
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 			StrictMode.setThreadPolicy(policy);
 
@@ -289,6 +340,7 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 				option.position(new LatLng(latitude, longitude));
 				option.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_group_location));
 				Marcur = map.addMarker(option);
+				map.setInfoWindowAdapter(new MarkerInfoWindowAdapter());
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -429,6 +481,33 @@ public class FindGroupFragment extends Fragment implements OnClickListener {
 			break;
 		}
 	}
-	
+	public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
+		public MarkerInfoWindowAdapter() {
+		}
+
+		@Override
+		public View getInfoWindow(Marker marker) {
+
+			return null;
+		}
+
+		@Override
+		public View getInfoContents(Marker marker) {
+
+			View v = getActivity().getLayoutInflater().inflate(R.layout.info, null);
+			Toast.makeText(getActivity(), marker.getTitle(), Toast.LENGTH_SHORT).show();
+			if (marker.getTitle() != "Vị trí hiện tại") {
+				TextView markerTitle = (TextView) v.findViewById(R.id.txttitle);
+				TextView markerSnippet = (TextView) v.findViewById(R.id.txtsnippet);
+
+				// Log.d("a", "myMarker" + myMarker.getUsername());
+				markerTitle.setText(marker.getTitle());
+				markerSnippet.setText(marker.getSnippet());
+
+			}
+			return v;
+
+		}
+	}
 	
 }

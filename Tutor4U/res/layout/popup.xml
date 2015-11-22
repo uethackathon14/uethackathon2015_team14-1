@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:background="@android:color/darker_gray"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Lựa chọn của bạn: " 
+            android:gravity="center_horizontal"
+             android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/Join"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Tham gia" />
+
+            <Button
+                android:id="@+id/Detail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Xem thông tin" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
